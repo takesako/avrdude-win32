@@ -78,6 +78,7 @@ cd ..
 ### # make avrdude-win32-6.3-r2.zip
 ```
 cd /mingw/src
+rm README.md
 wget -N -c --no-check-certificate https://github.com/takesako/avrdude-win32/raw/master/README.md
 cp -p README.md /avrdude/bin
 cd /avrdude/bin
