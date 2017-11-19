@@ -65,6 +65,7 @@ wget -nc -c --no-check-certificate https://github.com/takesako/alpine-iot/raw/ma
 wget -nc http://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz
 tar xvf avrdude-6.3.tar.gz
 cd avrdude-6.3
+patch -p1 < ../avrdude-6.3-ch341.patch
 patch -p1 < ../avrdude-6.3-ftdi232.patch
 patch -p1 < ../avrdude-6.3-libusb_exit.patch
 env CFLAGS="-I/mingw/src/libftdi_0.20_devkit_mingw32_08April2012/include" \
@@ -75,7 +76,7 @@ make
 make install
 cd ..
 ```
-### # make avrdude-win32-6.3-r2.zip
+### # make avrdude-win32-6.3-r3.zip
 ```
 cd /mingw/src
 rm README.md
@@ -86,5 +87,5 @@ strip avrdude.exe
 cp -p /mingw/src/libftdi_0.20_devkit_mingw32_08April2012/bin/libusb0.dll .
 unix2dos avrdude.conf
 objdump -p avrdude.exe | grep "DLL Name"
-zip -9 /mingw/src/avrdude-win32-6.3-r2.zip avrdude.exe avrdude.conf libusb0.dll README.md
+zip -9 /mingw/src/avrdude-win32-6.3-r3.zip avrdude.exe avrdude.conf libusb0.dll README.md
 ```
