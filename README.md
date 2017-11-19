@@ -60,6 +60,7 @@ cp -p libftdi_0.20_devkit_mingw32_08April2012/bin/libusb0.dll /mingw/src
 ## # build avrdude-6.3 with patch
 ```
 cd /mingw/src
+wget -nc -c --no-check-certificate https://github.com/takesako/alpine-iot/raw/master/avrdude/avrdude-6.3-ch341.patch
 wget -nc -c --no-check-certificate https://github.com/takesako/alpine-iot/raw/master/avrdude/avrdude-6.3-ftdi232.patch
 wget -nc -c --no-check-certificate https://github.com/takesako/alpine-iot/raw/master/avrdude/avrdude-6.3-libusb_exit.patch
 wget -nc http://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz
